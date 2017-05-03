@@ -71,7 +71,7 @@ svg.append("defs")
 
 //end slider part----------------------------------------------------------------------------------- 
 
-d3.tsv("web/all_teams.tsv", function(error, data) { 
+d3.tsv("public/all_teams.tsv", function(error, data) { 
   color.domain(d3.keys(data[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
     return key !== "date"; 
   }));
