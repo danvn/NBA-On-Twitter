@@ -4,14 +4,14 @@
 
     <style>
 
-    #chartdiv {
-        width   : 90%;
-        height  : 500px;
-    }       
-    #chartdiv2 {
-        width   : 90%;
-        height  : 500px;
-    }                               
+        #chartdiv {
+            width   : 90%;
+            height  : 800px;
+        }       
+        #chartdiv2 {
+            width   : 90%;
+            height  : 800px;
+        }                               
     </style>
 
     <script src="https://d3js.org/d3.v3.js"></script>
@@ -24,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BIG D NBA twitter Analysis</title>
+    <title>NBA Twitter Analysis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,271 +44,286 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
+        <![endif]-->
+
         <!-- jQuery -->
-    <script src="public/vendor/jquery/jquery.min.js"></script>
+        <script src="public/vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Amcharts -->
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-    <script src="https://www.amcharts.com/lib/3/amstock.js"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-    <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+        <!-- Amcharts -->
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+        <script src="https://www.amcharts.com/lib/3/amstock.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
 
-<body>
+    <body>
 
-  <nav style="position: fixed">
-    <div id="wrapper">
+      <nav style="position: fixed">
+        <div id="wrapper">
 
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu"> 
-                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
-                        </li>
-                        <li>
-                            <a href="#stats"><i class="fa fa-clock-o fa-fw"></i>Timeline</a>
-                        </li>
-                        <li>
-                            <a href="#chart"><i class="fa fa-edit fa-fw"></i>Graph</a>
-                        </li>
-                      <li>
-                            <a href="about.html"><i class="fa fa-info fa-fw"></i> About</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-                <!-- /.sidebar-collapse -->
-            <!-- /.navbar-static-side -->
-        </nav>
+                       <li>
+                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#stats"><i class="fa fa-clock-o fa-fw"></i>Timeline</a>
+                    </li>
+                    <li>
+                        <a href="#chart"><i class="fa fa-edit fa-fw"></i>Graph</a>
+                    </li>
+                    <li>
+                        <a href="about.html"><i class="fa fa-info fa-fw"></i> About</a>
+                    </li>
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">NBA Twitter Analysis</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+                </ul>
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div>
-                                    <center><div class="huge">133 Million</div>
-                                    <div>Overall Mentions</div></center>
-                                </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.sidebar-collapse -->
+    <!-- /.navbar-static-side -->
+</nav>
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">NBA Twitter Analysis</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div>
+                            <center>
+                                <div class="huge">133 Million</div>
+                                <div>Overall Mentions</div></center>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div>
-                                    <center><div class="huge">5 Years</div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div>
+                                <center><div class="huge">5 Years</div>
                                     <div>Worth of Tweets</div></center>                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
                                 <div>
                                     <center><div class="huge">30</div>
-                                    <div>NBA Teams</div></center>                                      
+                                        <div>NBA Teams</div></center>                                      
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>                   
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div>
-                                    <center><div class="huge">A Lot</div>
-                                    <div>Of Stuggling</div></center>                                     
-                                </div>
-                            </div>
-                        </div>
-                    </div>                   
-                </div>
-
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8 col-md-push-2">
-                    
-                    <!-- /.panel -->
-                
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <ul class="timeline">
-                                <li>
-                                    <div class="timeline-badge warning"><i class="fa fa-lightbulb-o"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Brainstorm</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Geotagged NBA Mention Map</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-                                <br>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge info"><i class="fa fa-twitter"></i> <i class="fa fa-map-marker"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Collect Tweets</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>States that aren't shaped like Colorado were hard</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-                                <li>
-                                    <div class="timeline-badge"><i class="fa fa-rotate-left"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Pivot</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Men don't use maps anyways</p>
-                                        </div>
-                                    </div>
-                                </li>                                
-                                <br>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge info"><i class="fa fa-cloud-download"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Actually Collect Tweets</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>EC2</p>
-                                            <p>GNIP is <i class="em em-fire"></i></p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>                                
-                                <br>
-                                <li>
-                                    <div class="timeline-badge danger"><i class="fa fa-cubes"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Storage</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Amazon S3</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-                                <br>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge info"><i class="fa fa-sort-amount-desc"></i><i class ="fa fa-sitemap"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Data Processing</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Reduce</p>
-                                            <p>Days -> Months -> Years</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>                                
-                                <br>
-                                <li>
-                                    <div class="timeline-badge danger"><i class="fa fa-line-chart"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Find Trends</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>D3</p>
-                                            <p>Bootstrap</p>
-                                        </div>
-                                    </div>
-                                </li>                                
-                                <li>
-                                <br>
-                                <br>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge info"><i class="fa fa-picture-o"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Visualize</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Display Data with D3</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        <!-- /.panel-body -->
+                        </div>                   
                     </div>
-                    
-                    <!-- /.panel -->
+
+
                 </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-8 col-md-push-2">
 
-                <div class="row" id="stats">
-                  <div class="col-lg-7 col-md-push-3">
-<!--                      <h1>#1 Most Mentioned Team</h1>-->
-                      <div>
-        
-                      <img src="public/images/golden_state.png" width="180px" height="200px" alt="golden_state" hspace="20">The <a href="https://twitter.com/@warriors">@Warriors</a> were mentioned 17 Million times
-                          
-                      </div>
-                      <br>
-                      <div>
-                      <img src="public/images/nuggets.jpeg" width="200px" height="200px" alt="nuggets" hspace="10">The <a href="https://twitter.com/@nuggets">@Nuggets</a>were mentioned a mere 491,000 times
-                          
-                      </div>
-                      <br>
-                    <div class = "row">
-                     <img src="public/images/timberwolves.png" width="180px" height="200px" alt="timberwolves" hspace="20">The <a href="https://twitter.com/@Timberwolves">@Timberwolves</a> were the least popular team
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <ul class="timeline">
+                                    <li>
+                                        <div class="timeline-badge warning"><i class="fa fa-lightbulb-o"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Brainstorm</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Geotagged NBA Mention Map</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <br>
+                                    <li class="timeline-inverted">
+                                        <div class="timeline-badge info"><i class="fa fa-twitter"></i> <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Collect Tweets</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>States that aren't shaped like Colorado were hard</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <div class="timeline-badge"><i class="fa fa-rotate-left"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Pivot</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Who use maps anymore anyways?</p>
+                                            </div>
+                                        </div>
+                                    </li>                                
+                                    <br>
+                                    <li class="timeline-inverted">
+                                        <div class="timeline-badge info"><i class="fa fa-cloud-download"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Actually Collect Tweets</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>EC2</p>
+                                                <p>GNIP is <i class="em em-fire"></i></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>                                
+                                    <br>
+                                    <li>
+                                        <div class="timeline-badge danger"><i class="fa fa-cubes"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Storage</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Amazon S3</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>
+                                    <br>
+                                    <li class="timeline-inverted">
+                                        <div class="timeline-badge info"><i class="fa fa-sort-amount-desc"></i><i class ="fa fa-sitemap"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Data Processing</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Reduce</p>
+                                                <p>Days -> Months -> Years</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <br>                                
+                                    <br>
+                                    <li>
+                                        <div class="timeline-badge danger"><i class="fa fa-line-chart"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Find Trends</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>D3</p>
+                                                <p>Bootstrap</p>
+                                            </div>
+                                        </div>
+                                    </li>                                
+                                    <li>
+                                        <br>
+                                        <br>
+                                    </li>
+                                    <li class="timeline-inverted">
+                                        <div class="timeline-badge info"><i class="fa fa-picture-o"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h4 class="timeline-title">Visualize</h4>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Display Data with D3</p>
+                                            </div>
+                                        </div>
+                                    </li>
 
-<!--                     </div>
-                      <div class="row" id="chart1">
-                      </div> -->
+                                </ul>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+
+                        <!-- /.panel -->
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="row">
+
+                                          <center><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Golden_State_Warriors_logo.svg/838px-Golden_State_Warriors_logo.svg.png" width="180px" height="200px" alt="golden_state" hspace="20"><br><br>The Golden State Warriors <a href="https://twitter.com/@warriors">@Warriors</a> were mentioned the most at 17 Million times</center>
+
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class = "row">
+                                          <center><img src="https://hdlogo.files.wordpress.com/2016/02/denver-nuggets-hd-logo1.png?w=300" width="200px" height="200px" alt="nuggets" hspace="10"><br><br>The Denver Nuggets<a href="https://twitter.com/@nuggets"> @Nuggets </a>were mentioned the least at a mere 491,000 times</center>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <div class = "row">
+                                 <center><img src="https://hdlogo.files.wordpress.com/2016/02/cleveland-cavaliers-hd-logo1.png?w=300" width="180px" height="200px" alt="timberwolves" hspace="20"><br><br>The Cleveland Cavaliers <a href="https://twitter.com/@cavs">@cavs</a> had the most engagement in a single day at 740,419 mentions on June 19, 2016</center>   
+                             </div>
+                         </div>                   
+                     </div>
+
+
+                     </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="row" id="stats">
+
                       <br>
                       <div class="panel panel-default">
                         <div class="panel-heading">
@@ -383,43 +398,72 @@
                             <!-- /.table-responsive -->
                         </div>
                     </div>
-                  </div>
                 </div>
+                <h1>
+                    <center>
+                    Twitter Mentions by Team 2012 - 2017
+                    </center>   
+                </h1>
+            </div>
 
 
-                <!-- <div id="chart"> -->
-                <div class="col-lg-7 col-md-push-1" id="chartdiv">
-                    <script type="text/javascript" src="public/amcharts.js"></script>
+            <!-- <div id="chart"> -->
+
+            <div class="col-lg-7 col-md-push-1" id="chartdiv">
+
+                <script type="text/javascript" src="public/amcharts.js"></script>
+            </div>
+          
+            <div class ="row"; style="text-align: center">
+                <div class="col-lg-8 col-md-push-2">
+                    <h1>
+                        <center>
+                            Twitter Growth Trend 2017
+                        </center>   
+                    </h1>            
                 </div>
-              <div class ="col-lg-7 col-md-push-1"; style="text-align: center">
                 <img src="public/img/TwitterUsers.png" width="800px" height="400px" alt="twitterUsers">
-              </div>
+            </div>
 
             <br><br><br>
-            <div class="col-lg-7 col-md-push-1" id="chart2">
+            <div class="row";; style="text-align: center"; id="chart2">
+                <div class="col-lg-8 col-md-push-2">
+                    <h1>
+                        <center>
+                            Did I Mention there was a Trend?
+                        </center>   
+                    </h1>            
+                </div>
+
                 <script type="text/javascript" src="public/d3.js"></script>
             </div>
 
             <br><br><br><br>
-
+                <div class="col-lg-8 col-md-push-2">
+                    <h1>
+                        <center>
+                            Comparing Mentions by Day
+                        </center>   
+                    </h1>            
+                </div>
             <div class="col-lg-7 col-md-push-1" id="chartdiv2">
                 <script type="text/javascript" src="public/multi.js"></script>
             </div>
 
 
-                <!-- /.col-lg-8 -->
-                <!-- </div> -->
+            <!-- /.col-lg-8 -->
+            <!-- </div> -->
 
             
             
-                <!-- /.col-lg-4 -->
+            <!-- /.col-lg-4 -->
             <!-- /.row -->
-        <!-- /#page-wrapper -->
+            <!-- /#page-wrapper -->
+
+        </div>
+
 
     </div>
-  
-
-  </div>
 
 
 
