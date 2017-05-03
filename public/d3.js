@@ -90,13 +90,13 @@ d3.tsv("public/all_teams.tsv", function(error, data) {
           rating: +(d[name]),
           };
       }),
-      visible: (name === "Unemployment" ? true : false) // "visible": all false except for economy which is true.
+      visible: (name === "All NBA Teams" ? true : false) // "visible": all false except for economy which is true.
     };
   });
 
   xScale.domain(d3.extent(data, function(d) { return d.date; })); // extent = highest and lowest points, domain is data, range is bouding box
 
-  yScale.domain([0, 100
+  yScale.domain([0, 5000000
     //d3.max(categories, function(c) { return d3.max(c.values, function(v) { return v.rating; }); })
   ]);
 
